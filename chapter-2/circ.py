@@ -1,3 +1,3 @@
-radius = float(input("Enter radius of circle: "))
+radius = float(input("What is the radius? "))
 answer = 3.14159 * radius * radius
-print("Area of circle =", answer)
+print("The area of the circle is =", answer)

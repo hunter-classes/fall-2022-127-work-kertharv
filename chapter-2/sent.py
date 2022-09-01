@@ -1,4 +1,4 @@
-word1 = "All"
+word = "All"
 word2 = "work"
 word3 = "and"
 word4 = "no"
@@ -9,4 +9,4 @@ word8 = "a"
 word9 = "dull"
 word10 = "boy."
 
-print(word1, word2, word3, word4, word5, word6, word7, word8, word9, word10)
+print(word, word2, word3, word4, word5, word6, word7, word8, word9, word10)
