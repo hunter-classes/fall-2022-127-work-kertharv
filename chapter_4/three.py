@@ -1,3 +1,3 @@
-for amonth in ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"]:
+for month in ["January", "February", "March", "April", "May", "June", "July", "August", "September", "November", "December"]:
     
-  print("One of the months of the year is", amonth)
+  print("One of the months of the year is", month)
