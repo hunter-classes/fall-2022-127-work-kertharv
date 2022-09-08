@@ -25,22 +25,22 @@ def square(t, x, y, w, color, sidelen):
     t.forward(sidelen)
     t.right(90)
 
-def triangle(t, numsides, x, y, color, width, sidelen):
+def triangle(t, x, y, w, color, sidelen):
   #code to draw the triangle
   t.penup()
   t.goto(x, y)
-  t.width(width)
+  t.width(w)
   t.color(color)
   t.pendown()
   for i in range (3):
     t.left(120)
     t.forward(sidelen)
 
-def hexagon(t, numsides, x, y, color, width, sidelen):
+def hexagon(t, x, y, w, color, sidelen):
   #code to draw the hexagon
   t.penup()
   t.goto(x, y)
-  t.width(width)
+  t.width(w)
   t.color(color)
   t.pendown()
   for i in range (6):
@@ -48,17 +48,35 @@ def hexagon(t, numsides, x, y, color, width, sidelen):
     t.left(300)
 
 
-#def ngon(t, numsides, x, y, color, width, sidelen):
+def ngon(t, numsides, x, y, color, width, sidelen):
   #code to draw the ngon
   #numsides- number of sides to draw a polygon
+  t.penup()
+  t.goto(x, y)
+  t.width(width)
+  t.color(color)
+  t.pendown()
+  t.left(30)
+  t.forward(sidelen)
+  t.left(60)
+  t.forward(sidelen)
+  t.left(120)
+  t.forward(sidelen)
+  t.left(60)
+  t.forward(sidelen)
+  t.left(90)
+  
 
 wn = turtle.Screen()
 
 honey = turtle.Turtle()
-triangle(honey, 3, 0, 0, "red", 1, 100)
+triangle(honey, 0, 0, 1, "red", 100)
 
 hexxy = turtle.Turtle()
-hexagon(hexxy, 6, 50, 50, "aqua", 1, 90)
+hexagon(hexxy, 50, 50, 5, "aqua", 90)
+
+indeed = turtle.Turtle()
+ngon(indeed, 6, 0, 0, "black", 5, 150)
 
 crush = turtle.Turtle()
 square(crush, 0, 0, 1, "green", 50)
