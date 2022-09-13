@@ -18,16 +18,30 @@ def is_odd(n):
 n = float(input("Input number: "))
 print(is_odd(n))
 
-#Exercise 10
-def is_rightangled(a,b,c):
-  if abs(c**2 - (a**2 + b**2) < 0.001):
-    return "True"
-  else:
-    return "False"
+#Exercise 10 and 11
 
+def is_rightangled(a,b,c):
+  if a > b and a > c:
+    a,b,c = b,c,a
+  elif b > a and b > c:
+    a,b,c = a,c,b
+  return abs(a**2 + b**2 - c**2) < 0.001
   
 a = float(input("Side 1: "))
 b = float(input("Side 2: "))
 c = float(input("Side 3: "))
 
 print(is_rightangled(a,b,c))
+
+#CodingBat
+#hello_name
+def hello_name(name):
+  return "Hello " + name + "!"
+
+#make_out_word
+def make_out_word(out, word):
+  return out[:2] + word + out[2:]
+
+#first_two
+def first_two(str):
+  return str[:2]
