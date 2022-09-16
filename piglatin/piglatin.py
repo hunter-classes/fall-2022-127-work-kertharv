@@ -30,14 +30,23 @@ def piglatin(word):
   try to also handle upper case words
   
   """
-  vowels = ('a','e','i','o','u','A','E','I','O','U')
-  for char in word:
-    if char in vowels:
-      final = word + "yay"
-    else:
-      final = word.replace(word[0:1], "") + word[0:1] + "ay" 
+  vowels = ['a','e','i','o','u','A','E','I','O','U']
+  if word[0] in vowels:
+    final = word + "yay"
+  else:
+    final = word.replace(word[0:1], "") + word[0:1] + "ay"  
   return final
 
-answer = piglatin("raid")
-print(answer)
+final = piglatin("Rotting")
+print(final)
+  #vowels = ('a','e','i','o','u','A','E','I','O','U')
+  #for char in word:
+    #if char in vowels:
+      #final = word + "yay"
+    #else:
+      #final = word.replace(word[0:1], "") + word[0:1] + "ay" 
+  #return final
+
+#answer = piglatin("uppers")
+#print(answer)
   
