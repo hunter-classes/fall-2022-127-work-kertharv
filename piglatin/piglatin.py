@@ -9,7 +9,7 @@ def bondify(name):
 
   last = name[location+1:].capitalize()
 
-  result = last.capitalize() + ', ' + first + ' ' + last
+  result = last + ', ' + first + ' ' + last
   return result
 
 result = bondify("james bond")
