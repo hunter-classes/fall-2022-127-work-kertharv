@@ -34,11 +34,17 @@ def piglatin(word):
   if word[0] in vowels:
     final = word + "yay"
   else:
-    final = word.replace(word[0:1], "") + word[0:1] + "ay"  
+    final = word.replace(word[1:], "") + word[1:] + "ay"  
   return final
 
 final = piglatin("Rotting")
 print(final)
+
+final = piglatin("Oatting")
+print(final)
+
+
+
   #vowels = ('a','e','i','o','u','A','E','I','O','U')
   #for char in word:
     #if char in vowels:
@@ -49,4 +55,17 @@ print(final)
 
 #answer = piglatin("uppers")
 #print(answer)
-  
+
+
+#def piglatinify(word):
+  #first = word[0]
+  #if first in 'aeiou':
+    #result = word +'ay'
+  #else: 
+    #result =  word[1:] + first +'ay'
+  #return result
+
+#Testing
+#test_word = "hello"
+#result = piglatinify(test_word)
+#print(test_word, "->", result)
