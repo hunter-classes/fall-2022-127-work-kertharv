@@ -30,18 +30,34 @@ def piglatin(word):
   try to also handle upper case words
   
   """
+  
   vowels = ['a','e','i','o','u','A','E','I','O','U']
+  #consonants = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+  punct = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+
+  for ele in word:
+    if ele in punct:
+      final = word.replace(word[0:1], "")
+  
   if word[0] in vowels:
     final = word + "yay"
+    
   else:
     final = word.replace(word[0:1], "") + word[0:1] + "ay"  
+    
   return final
 
-final = piglatin("Rotting")
-print(final)
+final = piglatin(".Oatti.ng")
+print("This has a punctuation ->", final)
 
-final = piglatin("Oatting")
-print(final)
+final = piglatin("Utting")
+print("This has a vowel ->", final)
+
+final = piglatin("Rotting")
+print("This has a consonant ->",final)
+
+
+
 
 
 
