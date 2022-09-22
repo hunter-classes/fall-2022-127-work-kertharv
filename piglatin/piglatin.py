@@ -34,7 +34,7 @@ def piglatin(word):
   if word[0] in vowels:
     final = word + "yay"
   else:
-    final = word.replace(word[1:], "") + word[1:] + "ay"  
+    final = word.replace(word[0:1], "") + word[0:1] + "ay"  
   return final
 
 final = piglatin("Rotting")
@@ -57,6 +57,7 @@ print(final)
 #print(answer)
 
 
+#Prof Zamansky's example:
 #def piglatinify(word):
   #first = word[0]
   #if first in 'aeiou':
