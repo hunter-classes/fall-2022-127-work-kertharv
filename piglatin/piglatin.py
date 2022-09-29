@@ -141,15 +141,37 @@ print(test_word," -> ",result)
 
 
 #Prof Zamansky's example:
-#def piglatinify(word):
+#def piglatinify_v1(word):
   #first = word[0]
   #if first in 'aeiouAEIOU':
     #result = word +'ay'
   #else:
     #if first == first.upper()
-      #result = word[1:.capitalize() + first.lower() + 'ay'
+      #result = word[1:].capitalize() + first.lower() + 'ay'
     #else:
       #result = word[1:] + first + 'ay'
+  #return result
+
+#def piglatinify(word):
+  #keep track of if the word had a capital letter
+  #if first == first.upper()
+    #capital = True
+  #else:
+    #capital = False
+  
+  #transform to lower case
+  #word = word[0].lower() + word[1:]
+  #first = word[0]
+
+  #turn into piglatin
+  #if first in 'aeiou':
+    #result = word +'ay'
+  #else:
+    #result = word[1:] + first + 'ay'
+
+  #if we started with a capital letter have to transform the result back to have a capital letter
+  #if capital:
+    #result = result.capitalize()
   #return result
 
 
