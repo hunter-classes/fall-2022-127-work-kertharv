@@ -143,13 +143,14 @@ print(test_word," -> ",result)
 #Prof Zamansky's example:
 #def piglatinify(word):
   #first = word[0]
-  #if first in 'aeiou':
+  #if first in 'aeiouAEIOU':
     #result = word +'ay'
-  #else: 
-    #result =  word[1:] + first +'ay'
+  #else:
+    #if first == first.upper()
+      #result = word[1:.capitalize() + first.lower() + 'ay'
+    #else:
+      #result = word[1:] + first + 'ay'
   #return result
-
-#Prof Zamansky's example with punctuation:
 
 
 #Testing
