@@ -149,6 +149,9 @@ print(test_word," -> ",result)
     #result =  word[1:] + first +'ay'
   #return result
 
+#Prof Zamansky's example with punctuation:
+
+
 #Testing
 #test_word = "hello"
 #result = piglatinify(test_word)
