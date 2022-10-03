@@ -35,3 +35,38 @@ print(l1)
 change_in_place_and_return(l,4,321)
 print(l2)
 print(l1)
+
+#This is an example of aliasing.
+#It can be powerful but you have to be careful.
+#and make sure you're not changing any lists.
+#that you don't want to change
+l2 = l1
+print("l1:", l1)
+print("l2:", l2)
+l1[4] = 9999
+print("l1:", l1)
+print("l2:", l2)
+
+#this is how how you would usually do a
+#function to change a part of a list
+#when you want to follow the functional paradigm
+def change_value(l,index,value):
+    result = []
+    for item in l:
+        #notice, we can stick a variable
+        #like lines in [] to make it a list
+        #then we can add it on to result which is a list
+        #result = result + [item]
+        #or we can call the list method
+        #append with item as a parameter
+        #result.append(item)
+    
+    #result = l.copy()
+    result = l[:]
+    result[index] = value
+    return result
+
+print(l1)
+l2 = change_value(l1,4,1111)
+print("l1:", l1)
+print("l2:", l2)
