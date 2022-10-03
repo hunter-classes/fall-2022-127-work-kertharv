@@ -1,9 +1,11 @@
 #Chapter 10 Exercises 10, 11, 12
 countWords_list = ['red', 'white', 'black', 'green', 'blue']
-def countWords(countWords_list):
+def countWords(lst):
     count = 0
-    if len(countWords_list) == 5:
-        count = count + 1
+    for five in countWords_list:
+        if len(countWords_list) == 5:
+            count = count + 1
     return count
 
-print(countWords)
+print(countWords_list)
+print(countWords(countWords_list))
