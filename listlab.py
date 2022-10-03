@@ -4,6 +4,6 @@ def countWords(countWords_list):
     count = 0
     if len(countWords_list) == 5:
         count = count + 1
+    return count
 
-result = countWords
-print(result)
+print(countWords)
