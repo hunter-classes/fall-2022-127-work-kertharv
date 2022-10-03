@@ -20,5 +20,5 @@ print("Average:", average)
 
 l = [3,4,5]
 print("l:", l)
-print("sum of squares:", sum_of_squares(l))
+print("sum of squares:", sum_of_Squares(l))
 
