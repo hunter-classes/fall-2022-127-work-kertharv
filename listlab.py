@@ -1,9 +1,9 @@
-numberlist = [51,1,4,6,5,9,8]
+numberlist = [1,2,3,4]
 numberlistv2 = [1,2,3,4,5,6,7]
 wordlist = ["these", "are", "all", "random", "words"]
 strlist = ["random word", "random letter", "capitalized Letter", "CAPITALIZED WORD!"]
 randomlist = numberlist + wordlist + strlist
-sam_list = ["Hello", "my", "name", "is", "sam", "I", "like", "ham."]
+sam_list = ["Hello", "I", "am", "sam", "I", "like", "ham."]
 
 #Write a function to find the smallest value in a listKfind smallest in a list of items
 def fix_value_error(list):  
@@ -78,7 +78,7 @@ def capitalize_longer_word(word):
   sentence = " ".join(final)
   return sentence
 
-print(capitalize_longer_word("In order to have a complete sentence, the sentence must have a minimum of three word types: a subject, a verb, and an object."))
+print(capitalize_longer_word("Do not do it or I will do it like a memorable person."))
 
 print("------------------------------")
 
@@ -91,6 +91,8 @@ def sqr_all_nums(numlist):
   return final_list
 
 print(sqr_all_nums(numberlist))
+
+print("------------------------------")
 
 # Write a function that takes two lists of numbers and 
 # returns a new list where each item is the corresponding values of the original lists 
@@ -105,6 +107,8 @@ def add_both_lists_nums(l1,l2):
 
 print(add_both_lists_nums(numberlist,numberlistv2))
 
+print("------------------------------")
+
 # Chapter 10 Exercises 10, 11, and 12
 
 def five_letter_list(word_list):
@@ -116,16 +120,17 @@ def five_letter_list(word_list):
 
 print(five_letter_list(wordlist))
 
-def sum_all_nums_up_to_one_even(numlist):
-  final_sum = 0
-  for num in numlist:
-    if num % 2 == 0:
-      return final_sum
-    else:
-      final_sum = final_sum + num
+def sumToEven(list):
+  evenNumberIndex = 0
+  sum = 0
+  for index in range(len(list)):
+    if list[index] % 2 == 0:
+      evenNumberIndex = index
+  for index in range(evenNumberIndex):
+    sum += list[index]
+  return sum 
       
-      
-print(sum_all_nums_up_to_one_even(numberlist))
+print(sumToEven(numberlist))
 
 def sam_stopper_counter(list):
   n = 0
