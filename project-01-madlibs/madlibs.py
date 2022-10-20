@@ -9,7 +9,7 @@
 import random
 
 # Opens a file, and returns it as a file object.
-story = open('story.txt')
+story = open("story.dat")
 adj = open("adj.dat")
 nouns = open("nouns.dat")
 verbs = open("verbs.dat")
