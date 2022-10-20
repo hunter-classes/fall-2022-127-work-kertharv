@@ -9,12 +9,12 @@
 import random
 
 # Opens a file, and returns it as a file object.
-story = open("story.dat")
-adj = open("adj.dat")
-nouns = open("nouns.dat")
-verbs = open("verbs.dat")
+story = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/story.dat")
+adj = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/adj.dat")
+nouns = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/nouns.dat")
+verbs = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/verbs.dat")
 
-# Reads data previously written to a file
+# Reads data previously written to a file.
 storyread = story.read()
 adjread = adj.read()
 nounsread = nouns.read()
@@ -55,6 +55,6 @@ def madlibs(story):
             if(ind == 0 or new[ind-1].find('.')):
                 new[ind].capitalize()
         ind+=1
-    return new.join(' ')                          #turns new list back into a string and returns
+    return ' '.join(new)                         #turns new list back into a string and returns
 
 print(madlibs(storyread))
