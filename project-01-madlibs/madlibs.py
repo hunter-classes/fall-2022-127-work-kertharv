@@ -9,10 +9,10 @@
 import random
 
 # Opens a file, and returns it as a file object.
-story = open('/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/story.txt')
-adj = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/adj.dat")
-nouns = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/nouns.dat")
-verbs = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/verbs.dat")
+story = open('story.txt')
+adj = open("adj.dat")
+nouns = open("nouns.dat")
+verbs = open("verbs.dat")
 
 # Reads data previously written to a file
 storyread = story.read()
