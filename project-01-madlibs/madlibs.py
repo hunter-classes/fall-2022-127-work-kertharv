@@ -1,8 +1,8 @@
 # Extras
-# Extra #1: Instead of specifying the sentences or story to convert, 
+# Extra #1 (Done): Instead of specifying the sentences or story to convert, 
 # write a story in a file and read it from your program. 
 # Make sure to include the file in your repo and that your program reads it correctly.
-# Extra #2: Pay attention to letter case. That is, if you replace a word at the beginning of a sentence, 
+# Extra #2 (Not Done... Fix it): Pay attention to letter case. That is, if you replace a word at the beginning of a sentence, 
 # it should be capitalized, otherwise, lowercase. 
 # This is except in the case of proper nouns which should always be capitalized.
 
@@ -25,36 +25,46 @@ adjlist = adjread.split()
 nounslist = nounsread.split()
 verbslist = verbsread.split()
 
-def randAdj():
+def random_adj():
     return adjlist[random.randrange(len(adjlist))]
 
-def randNounName():
+def random_noun():
     return nounslist[random.randrange(len(nounslist))]
 
-def randVerb():
+def random_verb():
     return verbslist[random.randrange(len(verbslist))]
 
-#Edit this part and below
+# Edit this part and below
 def madlibs(story):
-    new = storyread.split()         # new list of the story
-    ind = 0                     # index tracker
-    indName = -1                # keeps track if a name is established yet, and what index it is
-    for i in new:                                 
-        if i == "<NOUN>":                     # names
-            if indName == -1:                     # if this is the first time name is used
-                new[ind] = randNounName()         # calls premade random function at index of <NOUNName> (repeated)
-                indName = ind                
-            else:                                 # else, use the name from the index of first use
-                new[ind] = new[indName]
-        elif i == "<VERB>":                       # verbs
-            new[ind] = randVerb().lower()
-            if(ind == 0 or new[ind-1].find('.')):
-                new[ind].capitalize()
-        elif i == "<ADJ>":                         # adjectives
-            new[ind] = randAdj().lower()
-            if(ind == 0 or new[ind-1].find('.')):
-                new[ind].capitalize()
-        ind+=1
-    return ' '.join(new)                         #turns new list back into a string and returns
+    # Creates a new list of the story.
+    lol = storyread.split()     
+    # This is to show the index being tracked.    
+    tracker = 0
+    # Keeps track if a name is established yet and what index it is.            
+    tracker_name = -1                
+    for i in lol:
+        # Adjectives code                              
+        if i == "<NOUN>":
+            # If this is the first time name is used.        
+            if tracker_name == -1:      
+                # Calls premade random function at index of <NOUN> (repeated)              
+                lol[tracker] = random_noun()        
+                tracker_name = tracker             
+            # Else, use the name from the index of first use. 
+            else:                                 
+                lol[tracker] = lol[tracker_name]
+        # Verbs code
+        elif i == "<VERB>":                       
+            lol[tracker] = random_verb().lower()
+            if(tracker == 0 or lol[tracker-1].find('.')):
+                lol[tracker].capitalize()
+        # Adjectives code
+        elif i == "<ADJ>":                    
+            lol[tracker] = random_adj().lower()
+            if(tracker == 0 or lol[tracker-1].find('.')):
+                lol[tracker].capitalize()
+        tracker = tracker + 1
+    # Turns new list back into a string and returns
+    return ' '.join(lol)                         
 
 print(madlibs(storyread))
