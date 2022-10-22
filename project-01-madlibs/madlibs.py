@@ -2,9 +2,8 @@
 # Extra #1 (Done): Instead of specifying the sentences or story to convert, 
 # write a story in a file and read it from your program. 
 # Make sure to include the file in your repo and that your program reads it correctly.
-# Extra #2 (Not Done... Fix it): Pay attention to letter case. That is, if you replace a word at the beginning of a sentence, 
-# it should be capitalized, otherwise, lowercase. 
-# This is except in the case of proper nouns which should always be capitalized.
+# Extra #2 (Done): Add some replacements that are unique, that is, the first time 
+# you see them you select on randomly but then you keep reusing that replacement. 
 
 import random
 
@@ -38,6 +37,9 @@ def random_noun():
 def random_verb():
     return verbslist[random.randrange(len(verbslist))]
 
+def random_hero():
+    return herolist[random.randrange(len(herolist))]
+
 # Edit this part and below
 def madlibs(story):
     # Creates a new list of the story.
@@ -52,26 +54,26 @@ def madlibs(story):
             # If this is the first time hero is used.        
             if tracker_name == -1:      
                 # Calls premade random function at index of <hero> (repeated)              
-                lol[tracker] = random_noun()        
+                lol[tracker] = random_hero()        
                 tracker_name = tracker             
             # Else, use the name from the index of first use. 
             else:                                 
                 lol[tracker] = lol[tracker_name]
         # Nouns code
         elif p == "<NOUN>":                       
-            lol[tracker] = random_noun().lower()
+            lol[tracker] = random_noun()
             if(tracker == 0 or lol[tracker-1].find('.')):
-                lol[tracker].capitalize()
+                lol[tracker]
         # Verbs code
         elif p == "<VERB>":                       
             lol[tracker] = random_verb().lower()
             if(tracker == 0 or lol[tracker-1].find('.')):
-                lol[tracker].capitalize()
+                lol[tracker]
         # Adjectives code
         elif p == "<ADJ>":                    
-            lol[tracker] = random_adj().lower()
+            lol[tracker] = random_adj()
             if(tracker == 0 or lol[tracker-1].find('.')):
-                lol[tracker].capitalize()
+                lol[tracker]
         tracker = tracker + 1
     # Turns new list back into a string and returns
     return ' '.join(lol)                         
