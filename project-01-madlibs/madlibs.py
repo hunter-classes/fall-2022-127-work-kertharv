@@ -5,14 +5,22 @@
 # Extra #2 (Done): Add some replacements that are unique, that is, the first time 
 # you see them you select on randomly but then you keep reusing that replacement. 
 
+# Imports the module random.
 import random
 
 # Opens a file, and returns it as a file object.
-story = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/story.dat")
-adj = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/adj.dat")
-nouns = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/nouns.dat")
-verbs = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/verbs.dat")
-hero = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/hero.dat")
+story = open("story.dat")
+adj = open("adj.dat")
+nouns = open("nouns.dat")
+verbs = open("verbs.dat")
+hero = open("hero.dat")
+
+# Spare code for file directories.
+#story = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/story.dat")
+#adj = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/adj.dat")
+#nouns = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/nouns.dat")
+#verbs = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/verbs.dat")
+#hero = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/hero.dat")
 
 # Reads data previously written to a file.
 storyread = story.read()
@@ -42,21 +50,17 @@ def random_hero():
 
 # Edit this part and below
 def madlibs(story):
-    # Creates a new list of the story.
+    # Creates a new story list.
     lol = storyread.split()     
     # This is to show the index being tracked.    
-    tracker = 0
-    # Keeps track if a name is established yet and what index it is.            
+    tracker = 0           
     tracker_name = -1                
     for p in lol:
         # HERO code                              
         if p == "<HERO>":
-            # If this is the first time hero is used.        
-            if tracker_name == -1:      
-                # Calls premade random function at index of <hero> (repeated)              
+            if tracker_name == -1:              
                 lol[tracker] = random_hero()        
                 tracker_name = tracker             
-            # Else, use the name from the index of first use. 
             else:                                 
                 lol[tracker] = lol[tracker_name]
         # Nouns code
@@ -78,4 +82,5 @@ def madlibs(story):
     # Turns new list back into a string and returns
     return ' '.join(lol)                         
 
+# Print the code.
 print(madlibs(storyread))
