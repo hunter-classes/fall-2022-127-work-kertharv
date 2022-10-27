@@ -24,4 +24,42 @@ def freq(l,v):
 
 print(freq(list_1,value))
 
-    
+## Prof Zamansky's code:
+
+# def findLargest(dataset)
+    # largeSoFar = l[0]
+    # for item in dataset[1:]:
+        # if item > largeSoFar:
+            # largeSoFar = item
+    # return largeSoFar
+
+# def freq(dataset,v)
+    # count = 0
+    # for item in dataset:
+        # if item == v:
+            # count = count + 1
+    # return count
+
+    ## or
+
+    # [x for x in data set if x==19]
+    ## x == number
+    # len([x for x in dataset if x==3]) ## Counts how many 3s appear
+    # len([x for x in dataset if x==10]) ## Counts how many 10s appear
+    # len([x for x in dataset if x==15]) ##Counts how many 15s appear
+
+# def buildRandomList(size, maxvalue):
+    # result = []
+    # for x in range(size):
+        # result.appened(random.randrange(maxvalue))
+    # return result
+
+    ## or
+
+    ## List Comprehensions
+    # result = [random.randrange(max value) for x in range(size)]
+    # return result
+
+# dataset = buildRandomList(20,30)
+# print(findLargest(dataset))
+# print(freq(dataset,3))
