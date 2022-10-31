@@ -120,26 +120,36 @@ def fastMode(dataset):
     # assume all values in dataset
     # are between 0  and 99 inclusive
 
-    # !. Make a list of 100 slots
+    # 1. Make a list of 100 slots
     # and set them all to 0
     # this will store our tallies
-
+    list = [0] * 100
     # 2. Loop through a dataset
     # and for each item increment
-    # (add 1) to the approrpriate
+    # (add 1) to the appropriate
     # slot in the tallies list
-
+    for x in dataset:
+        list[x] = list[x] + 1
     # 3. The index with the highest
     # value in tallies is the mode
+    return max(list)
 
-def testMode(size,maxValue):
-    print("Datasize: ", size)
-    dataset = buildRandomList(size,maxValue)
-    #print(dataset)
+list = [1, 3, 30, 23, 2, 12, 2]
+list2 = [1, 2, 2, 11, 1, 3, 2, 12, 5, 3, 12, 21]
+
+print("Fastmode results: ", fastMode(list2))
+
+def testMode(size, maxValue):
+    dataset = buildRandomList(size, maxValue)
+    # print(dataset)
+    t = datetime.datetime.now()
+    starttime = t.microsecond / 1000
     m = mode(dataset)
-    print("Mode: ", m)
+    end = datetime.datetime.now()
+    elapsed = (end.microsecond / 1000) - starttime
+    print("size: ", size, " time: ", elapsed)
     
-#testMode(40000,30)
+testMode(40000,30)
 
 def testFindLargest(size,maxValue):
     print("Datasize: ", size)
