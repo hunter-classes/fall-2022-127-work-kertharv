@@ -23,17 +23,17 @@ hero = open("hero.dat")
 #hero = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-01-madlibs/hero.dat")
 
 # Reads data previously written to a file.
-storyread = story.read()
-adjread = adj.read()
-nounsread = nouns.read()
-verbsread = verbs.read()
-heroread = hero.read()
+storyr = story.read()
+adjr = adj.read()
+nounsr = nouns.read()
+verbsr = verbs.read()
+heror = hero.read()
 
 # Separate the words into strings.
-adjlist = adjread.split()
-nounslist = nounsread.split()
-verbslist = verbsread.split()
-herolist = heroread.split()
+adjlist = adjr.split()
+nounslist = nounsr.split()
+verbslist = verbsr.split()
+herolist = heror.split()
 
 # Calling these functions for madlibs function.
 def random_adj():
@@ -51,10 +51,11 @@ def random_hero():
 # Edit this part and below
 def madlibs(story):
     # Creates a new story list.
-    lol = storyread.split()     
+    lol = storyr.split()     
     # This is to show the index being tracked.    
     tracker = 0           
-    tracker_name = -1                
+    tracker_name = -1    
+
     for p in lol:
         # HERO code                              
         if p == "<HERO>":
@@ -63,24 +64,29 @@ def madlibs(story):
                 tracker_name = tracker             
             else:                                 
                 lol[tracker] = lol[tracker_name]
+
         # Nouns code
         elif p == "<NOUN>":                       
             lol[tracker] = random_noun()
             if(tracker == 0 or lol[tracker-1].find('.')):
                 lol[tracker]
+
         # Verbs code
         elif p == "<VERB>":                       
             lol[tracker] = random_verb().lower()
             if(tracker == 0 or lol[tracker-1].find('.')):
                 lol[tracker]
+
         # Adjectives code
         elif p == "<ADJ>":                    
             lol[tracker] = random_adj()
             if(tracker == 0 or lol[tracker-1].find('.')):
                 lol[tracker]
+                
         tracker = tracker + 1
+
     # Turns new list back into a string and returns
     return ' '.join(lol)                         
 
 # Print the code.
-print(madlibs(storyread))
+print(madlibs(storyr))
