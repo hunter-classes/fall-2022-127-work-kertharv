@@ -70,6 +70,8 @@ def buildRandomList(size, maxvalue):
 # print(findLargest(dataset))
 # print(freq(dataset,3))
 
+# --------------------------------------
+
 ## Classwork Code
 def mode(dataset):
     """
@@ -91,30 +93,33 @@ def mode(dataset):
         count that items frequence and see if it's the new mode so far.
     """
     ## My code
-    #counter = 0
-    #number = dataset[0]
+    counter = 0
+    number = dataset[0]
 
-    #for i in dataset:
-        #frequency = dataset.count(i)
-        #if frequency > counter:
-            #counter = frequency
-            #number = i
-        #return number
+    for i in dataset:
+        frequency = dataset.count(i)
+        if frequency > counter:
+            counter = frequency
+            number = i
+        return number
 
+## Prof Zamansky's code
 #print(mode(mode_list))
     # n^2 algorithm
-    modeSoFar = dataset[0]
-    freqSoFar = dataset.count(modeSoFar)
-    for item in dataset[1:]: #outer loop -> n
+    #modeSoFar = dataset[0]
+    #freqSoFar = dataset.count(modeSoFar)
+    #for item in dataset[1:]: #outer loop -> n
         #calling dataset.count(item) each time is n
         #n times n = n, or n^2 = n
-        if dataset.count(item) > freqSoFar:
-            modeSoFar = item
-            freqSoFar = dataset.count(item)
-    return modeSoFar
+        #if dataset.count(item) > freqSoFar:
+            #modeSoFar = item
+            #freqSoFar = dataset.count(item)
+    #return modeSoFar
 
 mode_list = [5,5,5,4,4,4,2,2,7,7,8,8,9]
-print(mode(mode_list))
+print("Mode results: ", mode(mode_list))
+
+# --------------------------------------
 
 def fastMode(dataset):
     # assume all values in dataset
@@ -134,11 +139,35 @@ def fastMode(dataset):
     # value in tallies is the mode
     return max(list)
 
-list = [1, 3, 30, 23, 2, 12, 2]
-list2 = [1, 2, 2, 11, 1, 3, 2, 12, 5, 3, 12, 21]
+list2 = [1, 2, 2, 2, 11, 1, 3, 2, 12, 5, 3, 12, 21]
 
 print("Fastmode results: ", fastMode(list2))
 
+## Prof Zamansky's code
+#def fastMode(dataset):
+    # assume all values in dataset
+    # are between 0  and 99 inclusive
+
+    # tallies = []
+
+    # 1. Make a list of 100 slots and set them all to 0
+    # this will store our tallies
+
+    # tallies = [0 for x in range(100)]
+
+    # 2. Loop through a dataset and for each item increment
+    # (add 1) to the appropriate slot in the tallies list
+
+    # for item in dataset:
+        # tallies[item] = tallies[item] + 1
+
+    # 3. The index with the highest value in tallies is the mode
+    
+    #return tallies
+
+# print(fastmode(list_2))
+
+# --------------------------------------
 def testMode(size, maxValue):
     dataset = buildRandomList(size, maxValue)
     # print(dataset)
@@ -159,6 +188,8 @@ def testFindLargest(size,maxValue):
     print("Largest: ", m)
 
 testFindLargest(10000,30)
+
+# --------------------------------------
 
 ## pretend our program starts here
 #dataset = [ some dataset]
