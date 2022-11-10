@@ -104,3 +104,7 @@ print(letter_counts)
 print("---------------------------------------")
 print(word_counts)
 
+translations = """a:b c:d oldword:newword"""
+print(translations)
+print(translations.split())
+print("oldword:newword".split())
