@@ -28,7 +28,7 @@ def get_words_range(bag,mincount,maxcount):
         and bag[x] <= maxcount]
     return results
 
-print(get_words_min_max(bag,100,500))
+#print(get_words_min_max(bag,100,500))
 
 file = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/dictionary/scandal.txt")
 
@@ -43,3 +43,23 @@ print(sorted(l)) # Sorts the list in numeric order
 
 l2 = sorted(l)
 print(l2[-1:]) # Sorts to the last item of the list
+
+print("--------------------------------")
+
+# Stop words code
+stop_words = open("/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/dictionary/stopwords.txt").read().split()
+
+def remove_words(bag, word_list):
+    newbag = {}
+    for word in bag.keys():
+        if word not in word_list:
+            newbag[word] = bag[word]
+    return newbag
+
+bag_s = remove_words(bag,stop_words)
+print(len(bag.keys()))
+
+l = get_words_range(bag_s,10,50)    
+print(l)
+
+
