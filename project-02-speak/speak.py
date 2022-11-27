@@ -38,6 +38,8 @@ for word in punc:
         newstory.append("Go away scallywag.")
     else: # Replace with same word
         newstory.append(word) 
+
+    # --------------------------------------------------------------
     if i == 0 or word == 'i' or '.' in lowertext[i-1] or '!' in lowertext[i-1]: # If the index 
     # is at 0 , or has a period before it, or exclamation mark before it, capitalize the first letter.
         newstory[i] = newstory[i].capitalize() 
@@ -47,11 +49,13 @@ for word in punc:
         newstory[i] = newstory[i] + ","
     elif "!" in lowertext[i]: # Else, if there is an exclamation mark, add it
         newstory[i] = newstory[i] + "!"
+
     i = i + 1
+
 updated = ' '.join(newstory) # Join after splitting story
 
 print(updated) # Prints the final and updated story
 
-# Old directores:
+# Old directories:
 # pirate = open('/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-02-speak/pirate.dat').read()  
 # text = open('/home/kerth/fall-2022-127-work-kertharv/fall-2022-127-work-kertharv/project-02-speak/input.txt').read()
