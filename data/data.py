@@ -16,9 +16,10 @@
 # Typically, a game with more than 10 hours of playtime enables the reviewers to make a reasonable and sound 
 # argument in their reviews.
 
-# In conclusion, the metacritic reviews are legitimate for potential customers looking into purchasing a video game
-# by simply searching up a particular gamereview on the platform. Again, since the reviews are opinions, it helps 
-# the customer judge whether to make the choice of purchasing the game or not.
+# In conclusion, the metacritic reviews are legitimate enough because there is no other real method of determining
+# whether a game is good or bad. For potential customers looking into purchasing a video game by simply searching 
+# up a particular game review on the platform. Again, since the reviews are opinions, it helps the customer 
+# judge whether to make the choice of purchasing the game or not.
 # -----------------------------------------------------------------
 import csv
 
