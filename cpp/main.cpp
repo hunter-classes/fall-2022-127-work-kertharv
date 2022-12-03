@@ -1,6 +1,15 @@
 #include <iostream>
 using namespace std;
 
+/*
+   Functions: 
+
+   addNum- Add two integers that returns a sum
+   returnLarger- Determine which of two numbers is greater
+   sum1ToNum -> Calculate the sum of values from 1 to some larger numbers
+
+*/
+
 int addNum(int a, int b);
 int greatestNum(int c, int d);
 int sumOf(int z);
